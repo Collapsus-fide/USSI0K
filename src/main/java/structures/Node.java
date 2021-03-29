@@ -1,7 +1,5 @@
 package structures;
 
-import game.Card;
-
 public class Node extends Maillon{
     public Node previous;
 

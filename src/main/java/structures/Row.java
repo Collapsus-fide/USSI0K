@@ -1,7 +1,5 @@
 package structures;
 
-import game.Card;
-
 public class Row {
     int length;
     Node first;

@@ -1,4 +1,6 @@
 package game;
 
-public interface Card {
+public class Card {
+    public String val;
+    public String suit;
 }
