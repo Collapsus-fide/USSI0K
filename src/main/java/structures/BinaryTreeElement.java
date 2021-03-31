@@ -2,11 +2,9 @@ package structures;
 
 import game.Player;
 
-import javax.swing.text.Element;
-
 public class BinaryTreeElement {
-    private int score;
-    private Player player;
+    final private int score;
+    final private Player player;
     public int round;
     private BinaryTreeElement rightSon;
     private BinaryTreeElement leftSon;

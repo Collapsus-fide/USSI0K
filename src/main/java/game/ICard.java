@@ -24,4 +24,6 @@ public interface ICard {
 
     }
 
+    public void display();
+
 }

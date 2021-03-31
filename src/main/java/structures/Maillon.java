@@ -20,5 +20,11 @@ public class Maillon {
         this.next = next;
     }
 
+public void display(){
+        this.value.display();
+        if(this.next != null){
+            this.next.display();
+        }
+}
 
 }

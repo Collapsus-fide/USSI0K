@@ -14,5 +14,13 @@ public class ListeChainee {
         this.first = newFirst;
     }
 
+    void display(){
+        if(this.first != null){
+            this.first.display();
+        }else{
+            System.out.println("Main vide");
+        }
+    }
+
 
 }
