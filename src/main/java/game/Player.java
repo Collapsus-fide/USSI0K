@@ -7,7 +7,7 @@ public class Player {
     int id;
     String name;
     ListeChainee hand;
-
+    boolean skipped = false;
 
 }
 

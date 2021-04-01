@@ -1,5 +1,6 @@
 package game;
 
+import structures.Pile;
 import java.util.Scanner;
 
 public class Turn {
@@ -8,7 +9,7 @@ public class Turn {
     int nbCardsToPlay;
     String value;
 
-    public boolean checkNbCardsOfValueInHand(){
+    public boolean checkNbCardsOfValueInHand() {
         boolean check = false;
         Scanner scanner = new Scanner(System.in);
 
@@ -29,18 +30,44 @@ public class Turn {
         return check;
     }
 
-        public void playAction(){
-        player.hand.playNCardsWithValue(nbCardsToPlay,value);
+    public boolean compareValues(String pileValue, String currentValue) {
 
-        }
-    public void playTurn() {
-        player.hand.display();
-        boolean success = false;
-        while (success == false){
-            success =this.checkNbCardsOfValueInHand();
-        }
+        return (round.game.hash.get(pileValue) <= round.game.hash.get(currentValue));
+
 
     }
 
+    public void playAction() {
+        Pile cardsPlayed = player.hand.playNCardsWithValue(nbCardsToPlay, value);
+        round.cardsPlayed.fusion(cardsPlayed);
+    }
+
+    public boolean playTurn() {
+        boolean res = false;
+        player.hand.display();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Voulez vous passer votre tour ? y/n");
+        String choice = scanner.nextLine();
+        if (choice == "y" || choice == "n") {
+            if (choice == "n") {
+                res = true;
+                boolean success = false;
+                boolean checkValueIsUpper = false;
+                boolean play = true;
+                while (!success && !checkValueIsUpper && play) {
+
+                    value = scanner.nextLine();
+                    success = this.checkNbCardsOfValueInHand();
+                    checkValueIsUpper = this.compareValues(round.cardsPlayed.getFirst().val, value);
+
+                }
+            } else {
+                System.out.println("Vous avez passé votre tour.");
+            }
+
+        }
+        return res;
+
+    }
 }
 

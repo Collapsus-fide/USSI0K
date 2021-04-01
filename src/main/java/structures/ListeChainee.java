@@ -35,11 +35,14 @@ public class ListeChainee {
         return count;
     }
 
-    public void playNCardsWithValue(int n, String value){
+    public Pile playNCardsWithValue(int n, String value){
+        Pile cardsPlayed = new Pile();
+
         Maillon current = first;
         Maillon previous = null;
         while(n > 0){
             if(current.value.val == value ){
+                cardsPlayed.addMaillon(current);
 
                 if (previous == null){
                     this.first = current.next;
@@ -50,6 +53,7 @@ public class ListeChainee {
 
             }
         }
+        return cardsPlayed;
     }
 
 

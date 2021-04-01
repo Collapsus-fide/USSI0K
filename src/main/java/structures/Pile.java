@@ -17,10 +17,18 @@ public class Pile {
         return this.first.value;
     }
 
-    public void depilate(){
-        this.first = this.first.next;
-    }
+    public Maillon depilate(){
 
+        Maillon res = this.first;
+        this.first = this.first.next;
+        return res;
+    }
+    public void fusion(Pile pile){
+        while(pile.first != null){
+            this.addMaillon(pile.depilate());
+        }
+
+    }
     public boolean nfirstsIdenticals(int n){
         boolean res = true;
         Maillon current = this.first;
