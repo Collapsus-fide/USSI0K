@@ -10,5 +10,13 @@ public class Round {
     Pile cardsPlayed;
     Game game;
 
+    public Round(Game game){
+        nbCards = 0;
+        cardsPlayed = new Pile();
+        this.game = game;
+    }
+
+    //public void start()
+
 
 }

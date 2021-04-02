@@ -4,10 +4,14 @@ import structures.ListeChainee;
 import java.util.Scanner;
 
 public class Player {
-    int id;
     String name;
     ListeChainee hand;
     boolean skipped = false;
+
+    public Player(String name){
+        this.name = name;
+        hand = new ListeChainee();
+    }
 
 }
 

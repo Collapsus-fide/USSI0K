@@ -19,6 +19,11 @@ public class File {
         }
 
 
+
+
+    }
+    public void addPlayer(String name){
+        addMaillonFile(new MaillonFile(new Player(name)));
     }
     public Player advance(){
         Player player = this.origin.player;
