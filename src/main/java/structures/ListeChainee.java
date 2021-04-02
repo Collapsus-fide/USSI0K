@@ -27,7 +27,7 @@ public class ListeChainee {
         int count = 0;
         Maillon current = first;
         while (current != null){
-            if (current.value.val == value){
+            if (current.value.val.equals(value)){
                 count++;
             }
             current = current.next;

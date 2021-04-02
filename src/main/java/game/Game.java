@@ -10,10 +10,24 @@ import java.util.Scanner;
 public class Game {
     File playerOrder;
     BinaryTree results;
+    public HashMap<String, Integer > hash = new HashMap<String, Integer>();
 
     public Game(){
         playerOrder = new File();
         BinaryTree results = new BinaryTree();
+        hash.put("3",0 );
+        hash.put("4",1 );
+        hash.put("5",2 );
+        hash.put("6",3 );
+        hash.put("7",4 );
+        hash.put("8",5 );
+        hash.put("9",6 );
+        hash.put("10",7 );
+        hash.put("J",8 );
+        hash.put("Q",9 );
+        hash.put("R",10 );
+        hash.put("A",11 );
+        hash.put("2",12 );
     }
     public void addPlayers(){
         Scanner scanner = new Scanner(System.in);
@@ -124,18 +138,5 @@ public class Game {
         }
 
     }
-    public HashMap<String, Integer > hash = new HashMap<String, Integer>();
-        /*hash.put("3",0 );
-        hash.put("4",1 );
-        hash.put("5",2 );
-        hash.put("6",3 );
-        hash.put("7",4 );
-        hash.put("8",5 );
-        hash.put("9",6 );
-        hash.put("10",7 );
-        hash.put("J",8 );
-        hash.put("Q",9 );
-        hash.put("R",10 );
-        hash.put("A",11 );
-        hash.put("2",12 );*/
+
 }

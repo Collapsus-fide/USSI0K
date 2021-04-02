@@ -19,8 +19,8 @@ public class Pile {
     public void addCard(Card card){
         addMaillon(new Maillon(card));
     }
-    public Card getFirst(){
-        return this.first.value;
+    public Maillon getFirst(){
+        return this.first;
     }
 
     public Maillon depilate(){

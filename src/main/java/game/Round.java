@@ -7,18 +7,28 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Round {
-    int nbCards = 0;
+    int nbCardsToPlay;;
     Pile cardsPlayed;
     Game game;
 
     public Round(Game game){
-        nbCards = 0;
+        nbCardsToPlay = 0;
         cardsPlayed = new Pile();
         this.game = game;
     }
 
     public boolean start(){
-
+        boolean continuePlaying = true;
+        while (continuePlaying){
+            Player currentPlayer = game.playerOrder.advance();
+            while(currentPlayer.skipped){
+                currentPlayer = game.playerOrder.advance();
+            }
+            Turn currentTurn = new Turn(currentPlayer,this);
+            if(!currentTurn.playTurn()){
+                currentPlayer.skipped=true;
+            }
+        }
 
         return false;
 
