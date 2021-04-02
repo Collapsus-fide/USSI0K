@@ -2,7 +2,7 @@ package structures;
 
 public class BinaryTree {
     BinaryTreeElement root;
-    BinaryTree(){
+    public BinaryTree(){
         this.root = null;
     }
 

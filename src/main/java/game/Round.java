@@ -3,6 +3,7 @@ package game;
 import structures.File;
 import structures.Pile;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Round {
@@ -16,7 +17,12 @@ public class Round {
         this.game = game;
     }
 
-    //public void start()
+    public boolean start(){
+
+
+        return false;
+
+    }
 
 
 }

@@ -2,6 +2,8 @@ package structures;
 
 import game.Card;
 
+import java.util.Random;
+
 public class Pile {
     Maillon first;
 
@@ -12,6 +14,10 @@ public class Pile {
     public void addMaillon(Maillon newMaillon){
         newMaillon.next = this.first;
         this.first = newMaillon;
+    }
+
+    public void addCard(Card card){
+        addMaillon(new Maillon(card));
     }
     public Card getFirst(){
         return this.first.value;
@@ -39,6 +45,10 @@ public class Pile {
         }
         return res;
     }
+
+
+
+
 }
 
 
